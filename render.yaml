@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: gridguard-dashboard
+    runtime: python
+    repo: https://github.com/alwaysarya/GridGuard
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run frontend/complete_dashboard.py --server.port 10000 --server.address 0.0.0.0
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
